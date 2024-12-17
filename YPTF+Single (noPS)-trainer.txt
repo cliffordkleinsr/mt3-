@@ -1,0 +1,1 @@
+python train.py notask_all_cross_v6_xk2_amp0811_gm_ext_plus_nops_b72 -p 2024 -d guitarset -it 100000 -vit 20000  -bsz 9 9 -pr 16
