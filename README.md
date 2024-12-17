@@ -163,3 +163,6 @@ Both these models use the same set of arguments, with the only difference being 
 - `-rp 1`: Enables RoPE partial position encoding
 
 These specific configurations ensure that each model is trained with its unique architecture and hyperparameters. When training a particular model, make sure to use the corresponding set of arguments to match the intended architecture and behavior.
+
+**Note**: Since this code was ported from Unix `pytorch 2.0` will not work since it relies on triton for the new ignite backend. You will have to manually compile the binaries from [here](https://github.com/woct0rdho/triton-windows). This project requires at least 16GB of VRAM i.e. High Compute usage
+
