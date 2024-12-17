@@ -1,8 +1,9 @@
-# Dataset preparation | Training
----
+# Introduction
+This is a full pipeline for AMT(Automatic Music Transcription) Training using the mt3 model with some improvements using perceiver transformer and pitch shift augmentations. It builds on the works of both [Magenta](https://archives.ismir.net/ismir2021/paper/000030.pdf) and [Sungkyun Chang and Co authors](https://arxiv.org/abs/2407.04822)
 
-## Work flow
----
+# Dataset preparation | Training
+
+## Workflow
 Begin by running `src/install_dataset.py` and select the dataset opt you want. The available arguments for this file are:  
 * `data_home` which denotes the Path to data home directory.
 * `nodown` which stores the argument as true inorder to control downloading. If set, no downloading will occur
@@ -164,5 +165,8 @@ Both these models use the same set of arguments, with the only difference being 
 
 These specific configurations ensure that each model is trained with its unique architecture and hyperparameters. When training a particular model, make sure to use the corresponding set of arguments to match the intended architecture and behavior.
 
-**Note**: Since this code was ported from Unix `pytorch 2.0` will not work since it relies on triton for the new ignite backend. You will have to manually compile the binaries from [here](https://github.com/woct0rdho/triton-windows). This project requires at least 16GB of VRAM i.e. High Compute usage
+## Notes
+- Since this code was ported from Unix, PyTorch ^2.0 will not work since it relies on triton for the new ignite backend. You must manually compile the binaries from [here](https://github.com/woct0rdho/triton-windows). Or use a unix based machine to avoid compilation errors
+- This project requires at least 16GB of VRAM i.e. High Compute usage.
+- Some Datasets are very large See Dataset Sizes [here](https://zenodo.org/records/10009959)
 
